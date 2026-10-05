@@ -5,9 +5,10 @@ Will be used to develop badGPT 3.0, which will feature full transformer architec
 <b>Maximum stress tested on RTX 3080 10GB with 16GB ram with a 210MB file</b>
 </h3>
 
-<h2>
+
 <br><br>
-<b><u>HOW TO USE (first time):</u></b>
+<h1><b><u>HOW TO USE (first time):</u></b></h1><br>
+<h2>
 0.5. install dependencies obviously
 1. run main.py, which features a cli with instructions.
 2. train on the sample file provided (stories.txt)
