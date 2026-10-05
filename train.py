@@ -6,13 +6,14 @@ import tfidf, shared
 #rewrote basically everything AGAIN after moving to vector embedding
 
 negativesamples = 5  # how many incorrect words to contrast against per pair
-dimensions = 250
+dimensions = 600
 matrixscalar = 1 / cp.sqrt(dimensions) #scale down matrixes since they usually blow up
 learningrate = 0.0012
-epochs = 3
 batchsize = 50000 #how many pairs per op
 subsamplethreshold = 1e-3  # lower for more aggressive dropping of frequent words
 negativetablesize = int(1e7)
+
+epochthresh = 0.05 #stops epochs when change in loss falls below value
 
 def tokenize(text): #cleanses text and returns as a massive tuple
 
@@ -118,7 +119,10 @@ def embedding(corpus):
     groupsize = 250
     groupnegatives = 20
 
-    for epoch in range(epochs):
+    epoch = 0
+    improvement = 999 #set to something that will never be below the threshold lol
+    while improvement > epochthresh:
+        epoch += 1
         losstotal = 0
 
         for i in range(batchesperepoch):
@@ -163,14 +167,17 @@ def embedding(corpus):
 
         if epoch % 1 == 0:
             avgloss = float(losstotal) / usedpairs
-            print(f"Epoch: {epoch+1}")
+            print(f"Epoch: {epoch}")
             try: # this is really lazy but icba rn
+                improvement = lastloss - avgloss
                 print(f"Loss improvement: {(lastloss - avgloss):.6f}")
             except NameError:
                 pass
 
             print(f"Avg loss: {avgloss:.6f}\n")
             lastloss = avgloss
+
+    print("Negligible loss improvement detected, stopping training...")
 
     matrix = cp.asnumpy(matrix) # i switched to cupy last minute because i forgot so ts kinda lazy
 

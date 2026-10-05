@@ -20,19 +20,20 @@ if __name__ == "__main__": # prevents pickles re-running top level script
     if choice == 't':
         fileinput = str(input("Enter file name:\n"))
         file = saveloadfiles.readfile(fileinput)
-        
-        print(f"Training on {fileinput}...")
 
-        matrix, wordtoid, idtoword = train.embedding(file)
+        if file != None:
+            print(f"Training on {fileinput}...")
 
-        print("Saving to .npz file...")
-        saveloadfiles.savefile(fileinput, matrix, wordtoid, idtoword)
+            matrix, wordtoid, idtoword = train.embedding(file)
 
-        if fileinput == "":  
-            fileinput = "fulltrained"
-        fileinput.replace("/","")
+            print("Saving to .npz file...")
+            saveloadfiles.savefile(fileinput, matrix, wordtoid, idtoword)
 
-        print(f"Successfully trained! Saved knowledge in memory/{fileinput}.npz, with size of {calcsize(saveloadfiles.getfilesize())}")
+            if fileinput == "":  
+                fileinput = "fulltrained"
+            fileinput.replace("/","")
+
+            print(f"Successfully trained! Saved knowledge in memory/{fileinput}.npz, with size of {calcsize(saveloadfiles.getfilesize())}")
 
     elif choice == 'g':
         while loaded == None:
