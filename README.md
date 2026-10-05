@@ -4,7 +4,7 @@ Will be used to develop badGPT 3.0, which will feature full transformer architec
 </head>
 <br><br>
 </h3>
-<u><b>Tested on RTX 3080 10GB with 16GB ram with a 210MB file, may improve performance and test more in the future.</b></u>
+<u><b>Tested on RTX 3080 10GB with 16GB RAM with a 500MB file, may improve performance and test more in the future.</b></u>
 
 <br>
 <h1><b><u>HOW TO USE (first time):</u></b></h1>
