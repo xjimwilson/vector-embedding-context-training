@@ -1,10 +1,10 @@
-<h3>
-Word2vec style vector embedding to understand meaning between words in txt files.<br>
+<h2>
+Word2vec style vector embedding to understand meaning between words in .txt files.<br>
 Will be used to develop badGPT 3.0, which will feature full transformer architecture
 </head>
 <br><br>
-</h3>
-<u><b>Tested on RTX 3080 10GB with 16GB RAM with a 500MB file, may improve performance and test more in the future.</b></u>
+</h2>
+
 
 <br>
 <h1><b><u>HOW TO USE (first time):</u></b></h1>
@@ -20,9 +20,30 @@ Will be used to develop badGPT 3.0, which will feature full transformer architec
 <h3> !! G to generate is not currently supported, placeholder for ai generation in the future !! </h3>
 <br><br>
 
-Model trained on 500mb @ 600 dims + window size 5:
+<h1>Tests on 500mb + window size 5</h1>
+<u><b>(RTX 3080 10GB + 16GB 3600mhz RAM w/ 500MB .txt file)</b></u><br><br>
+<h3> @ <b>50</b> dims:</h2>
 <img src='Figure_1.png'>
-Figure 1 shows similar projected vector magnitude between gender of words<br>
+<i>
+Figure 1 shows relatively similar projected vector magnitude between gender of words<br>
+</i>
 <br>
-<h2>All of this code was 100% human-written :)</h2>
 
+
+<h3>@ <b>600</b> dims:</h3>
+<img src='Figure_2.png'>
+<i>
+Figure 2 shows more precise precise vector magnitude<br>
+</i>
+<br>
+<b>
+<h3>
+From these tests, we can prove that: <br><br>
+<u>
+Precision(<i>N</i>) = <i>k</i> &middot; <i>N<sub>dim</sub></i> where K is a positive constant
+</u>
+</h3>
+</b>
+
+<br><br><br>
+<h2>All of this code was 100% human-written :)</h2>
