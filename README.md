@@ -15,9 +15,14 @@ Will be used to develop badGPT 3.0, which will feature full transformer architec
 3. should take a while depending on your hardware, but will create a .npz file<br>
 4. press m to manually test the fully trained model<br>
 </h3>
-Simply drag and drop txt files in datasets then train
-<br><br>
-<b> !! G to generate is not currently supported, placeholder for ai generation in the future !! </b>
+(Simply drag and drop txt files in datasets then train)
+<br>
+<h3> !! G to generate is not currently supported, placeholder for ai generation in the future !! </h3>
 <br><br>
 
-I didn't intend for this to be in public release, but i decided it would be good as a checkpoint for my project.
+Model trained on 500mb @ 600 dims + window size 5:
+<img src='Figure_1.png'>
+Figure 1 shows similar projected vector magnitude between gender of words<br>
+<br>
+<h2>All of this code was 100% human-written :)</h2>
+
