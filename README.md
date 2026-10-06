@@ -5,7 +5,6 @@ Will be used to develop badGPT 3.0, which will feature full transformer architec
 <br><br>
 </h2>
 
-
 <br>
 <h1><b><u>HOW TO USE (first time):</u></b></h1>
 <h3>
