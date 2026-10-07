@@ -1,4 +1,4 @@
-import saveloadfiles, train, shared, generate, usertest
+import saveloadfiles, train, shared, usertest
 
 text, choice, loaded, packaged = None, None, None, None
 
