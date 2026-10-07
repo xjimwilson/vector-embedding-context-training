@@ -1,7 +1,7 @@
 import re, cupyx
 import numpy as np
 import cupy as cp # AWFUL abbreviation
-import tfidf, shared
+import shared
 
 #rewrote basically everything AGAIN after moving to vector embedding
 
